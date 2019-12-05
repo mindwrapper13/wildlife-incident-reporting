@@ -1,0 +1,199 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Report an Event</h3>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <form action = "user.html" method = "post">
+                            <h4 class="card-title">Who?</h4>
+                            <div class="row">
+                                <div class="col-md-6 pr-1">
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input type="text" class="form-control" placeholder="First Name" name = "fname">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Last Name" name = "lname">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 pr-1">
+                                    <div class="form-group">
+                                        <label>Contact Number</label>
+                                        <input type="number" class="form-control" name = "phone">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" name = "email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Your Address</label>
+                                        <input type="text" class="form-control" placeholder="Address" name = "address">
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="card-title">What?</h4>
+                            <div class="row">
+                                <div class="col-md-6 pr-1">
+                                    <div class="form-group">
+                                        <label>Animal</label>
+                                        <input type="text" class="form-control"  placeholder="Animal name" name = "animal">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 px-1">
+                                    <div class="form-group">
+                                        <label>Incident type</label>
+                                        <input type="text" class="form-control" placeholder="Poaching,Trafficking,Hunting..." name = "incident_type">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 pr-1">
+                                    <div class="form-group">
+                                        <label>Situation Type(Urgency on a scale of 0 to 10)</label>
+                                        <input type="number" class="form-control" name = "situation_type" min = "0", max = "10">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 class="card-title">Where?</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <input type="text" class="form-control" placeholder="Incident Location" name = "incident_location">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 pr-1">
+                                    <div class="form-group">
+                                        <label>City/Village</label>
+                                        <input type="text" class="form-control" placeholder="City" name = "incident_city">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 px-1">
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="text" class="form-control" placeholder="Country" name = "incident_country">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pl-1">
+                                    <div class="form-group">
+                                        <label>Postal Code</label>
+                                        <input type="text" class="form-control" placeholder="ZIP Code" name = "incident_zipcode">
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pl-1">
+                                        <div class="form-group">
+                                        <button onclick="getLocation()"  class="btn btn-info btn-fill pull-right" name = "Access location">Access location</button>
+                                        </div>
+                                    </div>
+                            </div>
+                            <h4 class="card-title">When?</h4>
+                            <div class="row">
+                                <div class="col-md-6 pr-1">
+                                    <div class="form-group">
+                                        <label>Date</label>
+                                        <input type="datetime-local" class="form-control" name = "incident_date">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Time</label>
+                                        <input type="text" class="form-control" name = "incident_time">
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="card-title">How?</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Upload Image</label>
+                                        <input type="file" class="form-control" name = "files[]" id = "files">
+                                        <input type="hidden" name="url" id="url">
+                                        <button type="button" onclick="uploadimage()">Upload</button><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="" name = "description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill pull-right" name = "submit">Submit Report</button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+        var x = document.getElementById("demo");
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude +
+          "<br>Longitude: " + position.coords.longitude;
+        }
+        </script>
+<script>
+
+//ADD API KEY HERE
+var config = {
+
+};
+firebase.initializeApp(config);
+// Get a reference to the storage service, which is used to create references in your storage bucket
+function uploadimage(){
+var storage = firebase.storage();
+var file = document.getElementById("files").files[0];
+var storageRef = storage.ref();
+var thisref = storageRef.child(file.name).put(file);
+thisref.on('state_changed',function(snapshot){
+console.log("file uplaoded succesfully");
+},
+function(error) {
+},
+function() {
+// Upload completed successfully, now we can get the download URL
+var downloadURL = thisref.snapshot.downloadURL;
+console.log("got url");
+document.getElementById("url").value = downloadURL;
+alert("file uploaded successfully");
+});
+}
+</script>

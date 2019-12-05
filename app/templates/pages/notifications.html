@@ -1,0 +1,79 @@
+<style>
+.btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+     background-color: #fff;
+     background-image: none; 
+     border-color: #0062cc; 
+}
+
+
+</style>
+
+    
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">All Events</h4>
+                          </div>
+                          
+                        
+                      
+                        <br>
+                        
+                       <div class="container-fluid">
+                      
+                       <div class="row">
+                          {% for i in keys_list %}
+                            <div class="col-md-4">
+                        <div class="card" style="width: 18rem; "id="">
+                                
+                                <div class="card-body">
+                                  <h4 class="card-title">Incident {{ incident_data[i]['incident_id'] }}</h4>
+                                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                                  <p class="card-text">
+                                     <b>Animal: </b> {{ incident_data[i]['animal'] }} <br>
+                                     <b>Incident Type: </b>{{ incident_data[i]['incident_type'] }} <br>
+                                     <b>Incident Priority: </b> {{ incident_data[i]['incident_priority'] }} <br>
+                                     <b>Situation Type: </b>{{ incident_data[i]['situation_type'] }} <br>
+                                     <b>Incident Location: </b>{{ incident_data[i]['incident_location'] }} <br>
+                                     <b>Incident Data: </b>{{ incident_data[i]['incident_date'] }} <br>
+                                     <b>Incident Time: </b> {{ incident_data[i]['incident_time'] }} <br>
+                                     <b>Source: </b> {{ incident_data[i]['source'] }} <br>
+
+                                     
+
+                                  </p>
+                                  <a href={{ incident_data[i]["recording"] }} class="card-link">Voice Recording</a>
+                                              <a href= {{ incident_data[i][ "image_url" ] }} class="card-link">Image</a>
+                                  <p>
+
+
+
+                                  </p>
+                                  <div class="dropdown">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                         Respond
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                          <a class="dropdown-item" href="#">False Report</a>
+                                          <a class="dropdown-item" href="#">Resolved</a>
+                                          <a class="dropdown-item" href="#">Assigned</a>
+                                        </div>
+                                      </div>
+                                </div>
+                              </div>
+                            </div>
+    {% endfor %}
+                            
+                 </div>
+                </div> 
+
+                                    
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            
+                   
+                </div>
+            </div>
